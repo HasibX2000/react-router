@@ -1,0 +1,24 @@
+nav {
+    background-color:darkslateblue;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.Navitem{
+    color:#fff;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.Navitem:hover, nav .active{
+    color: yellow;
+}
+button{
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: darkslateblue;
+    color: #fff;
+    
+}
