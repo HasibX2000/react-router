@@ -1,4 +1,5 @@
 import React from 'react'
+import ReturnHome from './ReturnHome'
 
 const Contact = () => {
   return (
@@ -10,6 +11,7 @@ const Contact = () => {
         cum repellendus sequi dicta vero quidem, reprehenderit minus distinctio
         laudantium explicabo!
       </p>
+      <ReturnHome />
     </div>
   )
 }

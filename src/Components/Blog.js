@@ -1,65 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { blogsData } from '../blogsData'
 import ReturnHome from './ReturnHome'
-
+import './style.css'
 const Blog = () => {
+  const [blogs, setBlogs] = useState(blogsData)
+  const tranculate = (str, num) => {
+    if (str.length > num) {
+      return str.slice(0, num) + '...'
+    } else {
+      return num + '...'
+    }
+  }
+
   return (
     <div>
       <h1>This is our blogs page</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et corporis
-        quasi incidunt autem dolores ipsam quae natus eaque quibusdam excepturi
-        debitis neque, nobis molestias ex consectetur ipsa aliquam quia dolor.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et corporis
-        quasi incidunt autem dolores ipsam quae natus eaque quibusdam excepturi
-        debitis neque, nobis molestias ex consectetur ipsa aliquam quia dolor.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et corporis
-        quasi incidunt autem dolores ipsam quae natus eaque quibusdam excepturi
-        debitis neque, nobis molestias ex consectetur ipsa aliquam quia dolor.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et corporis
-        quasi incidunt autem dolores ipsam quae natus eaque quibusdam excepturi
-        debitis neque, nobis molestias ex consectetur ipsa aliquam quia dolor.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et corporis
-        quasi incidunt autem dolores ipsam quae natus eaque quibusdam excepturi
-        debitis neque, nobis molestias ex consectetur ipsa aliquam quia dolor.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et corporis
-        quasi incidunt autem dolores ipsam quae natus eaque quibusdam excepturi
-        debitis neque, nobis molestias ex consectetur ipsa aliquam quia dolor.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et corporis
-        quasi incidunt autem dolores ipsam quae natus eaque quibusdam excepturi
-        debitis neque, nobis molestias ex consectetur ipsa aliquam quia dolor.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et corporis
-        quasi incidunt autem dolores ipsam quae natus eaque quibusdam excepturi
-        debitis neque, nobis molestias ex consectetur ipsa aliquam quia dolor.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et corporis
-        quasi incidunt autem dolores ipsam quae natus eaque quibusdam excepturi
-        debitis neque, nobis molestias ex consectetur ipsa aliquam quia dolor.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et corporis
-        quasi incidunt autem dolores ipsam quae natus eaque quibusdam excepturi
-        debitis neque, nobis molestias ex consectetur ipsa aliquam quia dolor.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et corporis
-        quasi incidunt autem dolores ipsam quae natus eaque quibusdam excepturi
-        debitis neque, nobis molestias ex consectetur ipsa aliquam quia dolor.
-      </p>
+      <section>
+        {blogs.map((blog) => {
+          const { id, title, body } = blog
+          return (
+            <article key={id}>
+              <h3>{title}</h3>
+              <p>{tranculate(body, 200)}</p>
+              <Link to={title} className="BlogButton">
+                View Blog
+              </Link>
+            </article>
+          )
+        })}
+      </section>
+      <ReturnHome />
     </div>
   )
 }

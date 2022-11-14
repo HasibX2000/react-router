@@ -1,5 +1,4 @@
 import React from 'react'
-import ReturnHome from './ReturnHome'
 
 const Error = () => {
   return (

@@ -3,7 +3,11 @@ nav {
     height: 7vh;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
 }
 .Navitem{
     color:#fff;
@@ -21,4 +25,36 @@ button{
     background-color: darkslateblue;
     color: #fff;
     
+}
+section{
+    display: grid;
+    grid-gap:1rem
+}
+article{
+    background: lightcyan;
+    padding: 15px;
+    color: darkslateblue;
+  
+}
+.BlogButton{
+    background: #fff;
+    color: darkslateblue;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid darkslateblue;
+}
+.BlogButton:hover{
+    background: darkslateblue;
+    color: #fff;
+    transition: .3s;
+}
+@media screen and (min-width:600px){
+    section{
+        grid-template-columns: auto auto ;
+    }
+}
+@media screen and (min-width:992px){
+    section{
+        grid-template-columns: auto auto auto;
+    }
 }
