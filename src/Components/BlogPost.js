@@ -9,7 +9,7 @@ const BlogPost = () => {
   useEffect(() => {
     const blogdata = blogsData.filter((blog) => blog.title === title)
     setBodyData(blogdata[0].body)
-  }, 0)
+  }, [])
   return (
     <div>
       <h1>{title}</h1>
